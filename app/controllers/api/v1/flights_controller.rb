@@ -1,5 +1,5 @@
 class Api::V1::FlightsController < ApplicationController
-  before_action :set_flight, only: %i[ show update destroy ]
+  before_action :set_flight, only: %i[show update destroy]
 
   # GET /flights
   def index
@@ -47,13 +47,14 @@ class Api::V1::FlightsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_flight
-      @flight = Flight.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def flight_params
-      params.require(:flight).permit(:user_id, :name, :avatar, :cost)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_flight
+    @flight = Flight.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def flight_params
+    params.require(:flight).permit(:user_id, :name, :avatar, :cost)
+  end
 end

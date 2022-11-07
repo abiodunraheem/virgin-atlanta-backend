@@ -12,7 +12,8 @@ class FlightsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create flight" do
     assert_difference("Flight.count") do
-      post flights_url, params: { flight: { avatar: @flight.avatar, cost: @flight.cost, name: @flight.name, user_id: @flight.user_id } }, as: :json
+      post flights_url,
+           params: { flight: { avatar: @flight.avatar, cost: @flight.cost, name: @flight.name, user_id: @flight.user_id } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +25,8 @@ class FlightsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update flight" do
-    patch flight_url(@flight), params: { flight: { avatar: @flight.avatar, cost: @flight.cost, name: @flight.name, user_id: @flight.user_id } }, as: :json
+    patch flight_url(@flight),
+          params: { flight: { avatar: @flight.avatar, cost: @flight.cost, name: @flight.name, user_id: @flight.user_id } }, as: :json
     assert_response :success
   end
 
