@@ -1,83 +1,122 @@
-# Ruby on Rails Course
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-If you are not familiar with linters and GitHub Actions, read [root level README](../README.md).
+# Virgin Atlanta
 
-## Set-up GitHub Actions
+> Virgin Atlanta is a responsive app that allows users book flight, lists flight reservations or cancel flight. A user can selects a specific flight, see the details page with its full description, and can click the "Reserve" button to reserve it. The user can also access the "Reserve" page from the navigation panel, add or delete a reservation or flight.
 
-This GitHub Action is going to run [Rubocop](https://docs.rubocop.org/en/stable/) and [Stylelint](https://stylelint.io/) to help you find style issues.
 
-[Stylelint](https://stylelint.io/) is a linter for your stylesheets that helps you avoid errors and enforce conventions.
+## API Documentation
+Check out the [API documentation]()
 
-[Rubocop](https://docs.rubocop.org/en/stable/) is a Ruby static code analyzer (a.k.a. linter) and code formatter. It will enforce many of the guidelines outlined in the community [Ruby Style Guide](https://rubystyle.guide/).
+## Project Documentation 📄
 
-Please do the following **steps in this order**:
+- [x] Here is the deployed of back end [Heroku]()👈
+- [x] Here is the deployed of front end [Heroku]()👈
 
-1. In the first commit of your feature branch create a `.github/workflows` folder and add a copy of [`.github/workflows/linters.yml`](.github/workflows/linters.yml) to that folder.
-    - **Remember** to use the file linked above
-    - **Remember** that `.github` folder starts with a dot.
-2. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-3. When you open your first pull request you should see the result of the GitHub Actions:
 
-![gh actions checks](../assets/images/gh-actions-rubocop-stylelint-checks.png)
+### ERD diagram
 
-Click on the `Details` link to see the full output and the errors that need to be fixed:
+![Screenshot from 2022-10-05 10-32-43](https://user-images.githubusercontent.com/86069740/194005586-9b6bced6-eca9-41ec-b2f4-7ece0cd23615.png)
 
-![gh actions failing checks](../assets/images/gh-actions-rubocop-failing-checks.png)
+### Front-End Repo 
 
-## Set-up linters in your local env
+- [x] [We Fly Digital](https://github.com/abiodunraheem/virgin-atlanta-frontend)
 
-**Note**: The `npm` package manager is going to create a `node_modules` directory to install all of your dependencies. You shouldn't commit that directory. To avoid that, you can create a [`.gitignore`](https://git-scm.com/docs/gitignore) file and add `node_modules` to it:
+## Built With 🛠️
+
+- [x] Programming Language: [Ruby](https://www.ruby-lang.org/en/)
+- [x] Framework: [Ruby on Rails](https://rubyonrails.org/)
+- [x] Linter: [Rubocop](https://rubocop.org/)
+- [x] Code Editor: [VS Code](https://code.visualstudio.com/)
+
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+- [x] A web browser like Google Chrome.
+- [x] A code editor like Visual Studio Code with Git and Ruby.
+
+You can check if Git is installed by running the following command in the terminal.
+```
+$ git --version
+```
+
+Likewise for Ruby installation.
+```
+$ ruby --version && irb
+```
+
+To install rails, in the terminal kindly run this command
+```
+$ gem install rails
+```
+
+### Setup
+
+Clone the repository using the GitHub link provided below.
+
+## installation
+
+To get a local copy up and running follow these simple example steps.
+
+- clone the repository by running:
+```
+git clone git@github.com:abiodunraheem/virgin-atlanta-backend.git
+```
+- Install packages
+  ``` bundle i ```
+- Run the app
+```sh
+# Create the database
+rake db:create
+# Run database Migration
+rails db:migrate
+```
+### Usage
+
+Kindly modify the files as needed.
+
+### Run tests
+
+To install rspec, in the terminal kindly run this command
 
 ```
-# .gitignore
-node_modules/
+$ gem install rspec
 ```
 
-### Rubocop
+To run tests, please run this command
+```
+$ rspec spec
+```
 
-1. Add this line to the `Gemfile`
-    ```
-    gem 'rubocop', '>= 1.0', '< 2.0'
-    ```
-    *not sure how to use Gemfile? Read [this](https://bundler.io/v1.15/guides/bundler_setup.html)*.
-2. Run `bundle install`.
-3. Copy [.rubocop.yml](./.rubocop.yml) to the root directory of your project
-4. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-5. Run `rubocop`.
-6. Fix linter errors.
-7. **IMPORTANT NOTE**: feel free to research [auto-correct options for Rubocop](https://rubocop.readthedocs.io/en/latest/auto_correct/) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+## Author
 
-### Stylelint
+👤 **Abiodun Raheem**
 
-1. Run
+- GitHub: [@Abiodunraheem](https://github.com/Abiodunraheem)
+- Twitter: [@abiodunraheem23](https://twitter.com/abiodunraheem23)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/abiodun-raheem)
 
-   ```
-   npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
-   ```
+## 🤝 Contributing
 
-   *not sure how to use npm? Read [this](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).*
+Contributions, issues, and feature requests are welcome!
 
-2. Copy [.stylelintrc.json](./.stylelintrc.json) to the root directory of your project.
-3. **Do not make any changes in config files - they represent style guidelines that you share with your tem - which is a group of all Microverse students.**
-   - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-4. Run `npx stylelint "**/*.{css,scss}"` on the root of your directory of your project.
-5. Fix linter errors.
-6. **IMPORTANT NOTE**: feel free to research [auto-correct options for Stylelint](https://stylelint.io/user-guide/cli#autofixing-errors) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+Feel free to check the [issues page](https://github.com/abiodunraheem/virgin-atlanta-backend/issues).
 
-## RSpec/Heroku Actions
+## Show your support
 
-Feel free to add your own deployment actions which can run your tests and deploy to Heroku.
+Give a ⭐️ if you like this project!
 
-Make sure that you do not modify the [`.github/workflows/linters.yml`](.github/workflows/linters.yml) but that you create a separe GitHub Action workflow file for that.
+## Acknowledgments
 
-- [GitHub Actions with Ruby on Rails: Setting up Continuous Integration](https://gorails.com/episodes/github-actions-continuous-integration-ruby-on-rails)
-- [Deploying to Heroku from GitHub Actions](https://dev.to/heroku/deploying-to-heroku-from-github-actions-29ej)
-- [Building a Rails CI pipeline with GitHub Actions](https://boringrails.com/articles/building-a-rails-ci-pipeline-with-github-actions/)
-- [Github Actions to run Rubocop and RSpec tests on Rails with Postgres](https://dev.to/abdellani/github-actions-to-run-rubocop-and-rspec-tests-on-rails-with-postgres-47i)
+- [Microverse](https://www.microverse.org/)
+- Code Reviewers
+- Original design idea by [muratk](https://www.behance.net/muratk)
 
-## Troubleshooting
+The [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/) requires that you give appropriate credit to the author. Therefore, you must do it in the README of your project.
 
-- If you are building an API only Rails application
-For API only Rails application you can remove the Stylelint config. To do so remove line no. [23](https://github.com/microverseinc/linters-config/blob/f0c812753d0418288c404ed4a441a2e7370e9f4e/ror/.github/workflows/linters.yml#L23) to [36](https://github.com/microverseinc/linters-config/blob/f0c812753d0418288c404ed4a441a2e7370e9f4e/ror/.github/workflows/linters.yml#L36) from the [linter.yml]((https://github.com/microverseinc/linters-config/blob/master/ror/.github/workflows/linters.yml)) file.
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
