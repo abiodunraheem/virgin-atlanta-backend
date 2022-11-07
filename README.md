@@ -103,7 +103,7 @@ $ rspec spec
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/abiodunraheem/virgin-atlanta-backend/issues)
+Feel free to check the [issues page](https://github.com/abiodunraheem/virgin-atlanta-backend/issues).
 
 ## Show your support
 

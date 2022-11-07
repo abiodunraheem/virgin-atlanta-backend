@@ -3,11 +3,11 @@
 one:
   user: one
   flight: one
+  date: 2022-10-16
   city: MyString
-  date: 2022-11-07
 
 two:
   user: two
   flight: two
+  date: 2022-10-16
   city: MyString
-  date: 2022-11-07

@@ -12,8 +12,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create reservation" do
     assert_difference("Reservation.count") do
-      post reservations_url,
-           params: { reservation: { city: @reservation.city, date: @reservation.date, flight_id: @reservation.flight_id, user_id: @reservation.user_id } }, as: :json
+      post reservations_url, params: { reservation: { city: @reservation.city, date: @reservation.date, flight_id: @reservation.flight_id, user_id: @reservation.user_id } }, as: :json
     end
 
     assert_response :created
@@ -25,8 +24,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update reservation" do
-    patch reservation_url(@reservation),
-          params: { reservation: { city: @reservation.city, date: @reservation.date, flight_id: @reservation.flight_id, user_id: @reservation.user_id } }, as: :json
+    patch reservation_url(@reservation), params: { reservation: { city: @reservation.city, date: @reservation.date, flight_id: @reservation.flight_id, user_id: @reservation.user_id } }, as: :json
     assert_response :success
   end
 

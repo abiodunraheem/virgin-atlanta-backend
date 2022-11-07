@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_07_124134) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_16_171155) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_07_124134) do
     t.bigint "user_id", null: false
     t.string "name"
     t.string "avatar"
-    t.float "cost"
+    t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_flights_on_user_id"
@@ -27,8 +27,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_07_124134) do
   create_table "reservations", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "flight_id", null: false
-    t.string "city"
     t.date "date"
+    t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["flight_id"], name: "index_reservations_on_flight_id"
@@ -39,7 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_07_124134) do
     t.string "fullname"
     t.string "username"
     t.string "email"
-    t.string "password_digest"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

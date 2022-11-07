@@ -4,10 +4,10 @@ one:
   user: one
   name: MyString
   avatar: MyString
-  cost: 1.5
+  price: 1.5
 
 two:
   user: two
   name: MyString
   avatar: MyString
-  cost: 1.5
+  price: 1.5
