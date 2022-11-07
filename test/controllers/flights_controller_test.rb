@@ -1,35 +1,37 @@
-require "test_helper"
+require 'test_helper'
 
 class FlightsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @flight = flights(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get flights_url, as: :json
     assert_response :success
   end
 
-  test "should create flight" do
-    assert_difference("Flight.count") do
-      post flights_url, params: { flight: { avatar: @flight.avatar, name: @flight.name, price: @flight.price, user_id: @flight.user_id } }, as: :json
+  test 'should create flight' do
+    assert_difference('Flight.count') do
+      post flights_url,
+           params: { flight: { avatar: @flight.avatar, name: @flight.name, price: @flight.price, user_id: @flight.user_id } }, as: :json
     end
 
     assert_response :created
   end
 
-  test "should show flight" do
+  test 'should show flight' do
     get flight_url(@flight), as: :json
     assert_response :success
   end
 
-  test "should update flight" do
-    patch flight_url(@flight), params: { flight: { avatar: @flight.avatar, name: @flight.name, price: @flight.price, user_id: @flight.user_id } }, as: :json
+  test 'should update flight' do
+    patch flight_url(@flight),
+          params: { flight: { avatar: @flight.avatar, name: @flight.name, price: @flight.price, user_id: @flight.user_id } }, as: :json
     assert_response :success
   end
 
-  test "should destroy flight" do
-    assert_difference("Flight.count", -1) do
+  test 'should destroy flight' do
+    assert_difference('Flight.count', -1) do
       delete flight_url(@flight), as: :json
     end
 
