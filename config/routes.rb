@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  resources :reservations
-  resources :flights
-  resources :users
+  namespace :api do
+    namespace :v1 do
+      resources :flights
+      resources :users
+      resources :reservations
+    end
+  end
+  
+  
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
