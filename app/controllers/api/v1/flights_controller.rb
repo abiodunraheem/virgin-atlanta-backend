@@ -1,16 +1,17 @@
-class FlightsController < ApplicationController
+class Api::V1::FlightsController < ApplicationController
   before_action :set_flight, only: %i[ show update destroy ]
 
   # GET /flights
   def index
     @flights = Flight.all
-
     render json: @flights
   end
 
   # GET /flights/1
   def show
-    render json: @flight
+    @flight = Flight.find(params[:id])
+    render json: { flight: @flight }, status: :ok
+    # render json: @flight
   end
 
   # POST /flights
@@ -18,9 +19,11 @@ class FlightsController < ApplicationController
     @flight = Flight.new(flight_params)
 
     if @flight.save
-      render json: @flight, status: :created, location: @flight
+      render json: { status: 201, message: 'flight created successfully!', content: { flight: @flight } }
+      # render json: @flight, status: :created, location: @flight
     else
-      render json: @flight.errors, status: :unprocessable_entity
+      render json: { error: 401, message: ' flight cannot be processed !' }
+      # render json: @flight.errors, status: :unprocessable_entity
     end
   end
 
@@ -35,7 +38,12 @@ class FlightsController < ApplicationController
 
   # DELETE /flights/1
   def destroy
-    @flight.destroy
+    @flight = Flight.find(params[:id])
+    if @flight.destroy!
+      render json: { success: 'The flight has been deleted successfully' }, status: :ok
+    else
+      render json: { error: 'There was an error, please try again!' }, status: :internal_server_error
+    end
   end
 
   private
