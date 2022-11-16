@@ -1,0 +1,120 @@
+# ---
+# openapi: 3.0.1
+# info:
+#   title: API V1
+#   version: v1
+# paths: {}
+# servers:
+# - url: https://{defaultHost}
+#   variables:
+#     defaultHost:
+#       default: www.example.com
+
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/flights":
+    get:
+      summary: list flights
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create flight
+      responses:
+        '200':
+          description: successful
+  "/flights/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show flight
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete flight
+      responses:
+        '200':
+          description: successful
+  "/reservations":
+    get:
+      summary: list reservations
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create reservation
+      responses:
+        '200':
+          description: successful
+  "/":
+    get:
+      summary: list users
+      responses:
+        '200':
+          description: successful
+  "/users":
+    get:
+      summary: list users
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create user
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          appication/json:
+            schema:
+              type: object
+              properties:
+                fullname:
+                  type: string
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+              required:
+              - fullname
+              - username
+              - email
+              - password
+  "/login":
+    post:
+      summary: login user
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+              required:
+              - username
+              - password
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
